@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myDate = function (day, mouth, year) {   //thuoc tinh:
+            this.day = day;
+            this.mouth = mouth;
+            this.year = year;
+            // phuong thuc:
+            //1. phuong thuc tra ve :
+            this.getDate = function () {
+
+                let dd = this.getDay();
+                let mm = this.getMouth();
+                let yyyy = this.getYear();
+
+                if (dd < 10) {
+                    dd = "0" + dd;
+                }
+                if (mm < 10) {
+                    mm = "0" + mm;
+                }
+                return mm + "-" + dd + "-" + yyyy;
+
+            }
+            this.getDay = function () {
+                return this.day;
+            }
+            this.getMouth = function () {
+                return this.mouth;
+            }
+            this.getYear = function () {
+                return this.year;
+            }
+
+            // 2.phuong thuc thiet lap lai ngay,thang,nam:
+
+            this.setDay = function (day) {
+                this.day = day;
+            }
+
+            this.setMouth = function (mouth) {
+                this.mouth = mouth;
+            }
+            this.setYear = function (year) {
+                this.year = year;
+            }
+        }
+        let date = new myDate(2, 2, 2007);
+        let day = date.getDay();
+        let mouth = date.getMouth();
+        let year = date.getYear();
+        let today = date.getDate();
+
+        console.log(day + "" + mouth + "" + year +" "+today);
+
+
+    </script>
+</body>
+
+</html>
